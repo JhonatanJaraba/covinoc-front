@@ -1,0 +1,64 @@
+<div>
+    <nz-layout >
+          <nz-sider  nzCollapsible nzWidth="240px" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" >
+            <ul  nz-menu nzMode="inline">
+              <div class="logo" *ngIf="!isCollapsed">
+                <a>
+                <img class="icon-menu" src="../../../assets/icons/logo-social.png" alt="logo">
+                </a>
+              </div>
+              <div class="logo" *ngIf="isCollapsed">
+                <a>
+                <img src="../../../assets/icons/icons-covinoc.png" style="width: 42px;" alt="logo">
+                </a>
+              </div>
+              <form nz-form *ngIf="!isCollapsed">
+                <nz-form-item style="margin-top: 50px;">
+                  <nz-form-control [nzSpan]="22" >
+                    <nz-input-group nzPrefixIcon="search" style="color: #798CA5; justify-content: center;" class="type-control">
+                    <input nz-input name="email" type="email" id="email">
+                  </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+              </form>
+              <form nz-form *ngIf="isCollapsed">
+                <nz-form-item>
+                  <nz-form-control [nzSpan]="16" >
+                    <nz-input-group nzPrefixIcon="search" style="color: #798CA5; justify-content: center;" class="type-control">
+                    <input nz-input name="email" type="email" id="email">
+                  </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item >
+              </form>
+              <li nz-menu-item>
+                <a [routerLink]="['/main']" routerLinkActive="item--active" 
+                [routerLinkActiveOptions]="{exact: true}">
+                <i nz-icon [nzType]="'home'" style="font-size: 20px;" ></i>
+                <span class="text-side-bar" >Inicio</span>
+              </a>
+              </li>
+              
+              <li nz-submenu routerLinkActive="item--active"
+                  [(nzOpen)]="openMap.sub1"
+                  (nzOpenChange)="openHandler('sub1')">
+                <span title><i nz-icon nzType="user" style="font-size: 20px;"></i><span>Usuarios</span></span>
+                <ul >
+                  <li nz-menu-item [routerLink]="['/main/user']">Lista usuarios</li>
+                </ul>
+                <ul >
+                  <li nz-menu-item [routerLink]="['/main/user/user-create']">Crear usuarios</li>
+                </ul>
+              </li>
+            
+              
+              <nz-footer class="footer-login" *ngIf="!isCollapsed">
+                <img src="../../../assets/Logo company.svg" alt="">
+              </nz-footer>
+              <nz-footer style="padding: 0px 20px; background: #FFFFFF; width: 0px;" *ngIf="isCollapsed">
+                <img src="../../../assets/Logo_company_2.svg" alt="">
+              </nz-footer>
+            </ul>
+          </nz-sider>
+        </nz-layout>
+        
+    </div>

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.title-home{
+    font-family: 'Taylor Sans';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.01em;
+    color: #415364;
+    
+}
+
+.home-title-page{
+    position: static;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 5px 10px;
+}
+
+.title-secundary{
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 10px;
+    color: #798CA5;
+}
+
+.icons-list > .anticon {
+    
+    font-size: 20px;
+  }
+
+
+  th{
+    font-family: 'Taylor Sans';
+    font-style: italic;
+    font-weight: 600 !important;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #415364 !important;
+  }
+
+  td{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 12px;
+    line-height: 18px;
+    color: #556A83 !important;
+  }

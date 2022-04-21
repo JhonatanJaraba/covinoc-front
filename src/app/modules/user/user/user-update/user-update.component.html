@@ -1,0 +1,88 @@
+<div class="home-title-page" style="display: flex; justify-content: space-between; "> 
+    <h1 class="title-home">Configuración de usuarios</h1>
+  <div>
+    <button 
+    nz-button class="login-form-button login-form-margin button-black" 
+    [nzType]="'primary'" 
+    [routerLink]="['/main/user']"
+    >Cancelar
+   </button>
+   <button 
+    nz-button class="login-form-button login-form-margin button-green" 
+    [nzType]="'primary'" form="CreateForm"
+    >Actualizar
+   </button>
+ </div>
+</div>
+<div style="border: 1px solid #E9EEFA; border-radius: 8px; margin: 20px 0px; align-items: center;">
+    <h2 class="title-secundary">Ingrese los siguientes datos para crear un usuario.</h2>
+    <form nz-form [formGroup]="validateForm" id="CreateForm" (ngSubmit)="saveData()">
+
+      <div nz-row [nzGutter]="24" nzJustify="center">
+
+        <div nz-col [nzSpan]="7">
+          <label class="label-title">Nombre</label>
+          <nz-form-item>
+              <nz-form-control nz-col [nzSpan]="23" nzErrorTip="Por favor escriba un nombre!">
+                <input id="nombre" type="text" [ngModel]="nombre" nz-input formControlName="nombre" placeholder="Escriba nombre"/>
+              </nz-form-control>
+          </nz-form-item>
+      </div>
+
+      <div nz-col [nzSpan]="7">
+        <label class="label-title">Nombre de usuario</label>
+        <nz-form-item>
+            <nz-form-control nz-col [nzSpan]="23" nzErrorTip="Por favor digite nombre de usuario!">
+              <input id="usuario" type="text" [ngModel]="usuario" nz-input formControlName="usuario" placeholder="Escriba nombre de usuario"/>
+            </nz-form-control>
+        </nz-form-item>
+    </div>
+
+    <div nz-col [nzSpan]="7">
+      <label class="label-title">Telefono</label>
+      <nz-form-item>
+          <nz-form-control nz-col [nzSpan]="23" nzErrorTip="Por favor escriba un numero de telefono!">
+            <input id="telefono" type="text" [ngModel]="telefono" nz-input formControlName="telefono" placeholder="Escriba numero de telefono"/>
+          </nz-form-control>
+      </nz-form-item>
+  </div>
+
+  <div nz-col [nzSpan]="7">
+    <label class="label-title">Identificacion</label>
+    <nz-form-item>
+        <nz-form-control nz-col [nzSpan]="23" nzErrorTip="Por favor escriba una identificacion">
+          <input id="identificacion" type="text" [ngModel]="identificacion" nz-input formControlName="identificacion" placeholder="Escriba identificacion"/>
+        </nz-form-control>
+    </nz-form-item>
+</div>
+
+<div nz-col [nzSpan]="7">
+  <label class="label-title">Correo electronico</label>
+  <nz-form-item>
+      <nz-form-control nz-col [nzSpan]="23" nzErrorTip="Por favor escriba su correo electronico!">
+        <input id="correo" type="email" [ngModel]="email" nz-input formControlName="correo" placeholder="Correo electronico"/>
+      </nz-form-control>
+  </nz-form-item>
+</div>
+
+    <div nz-col [nzSpan]="7">
+        <label class="label-title">Roles</label>
+        <nz-form-item>
+          <nz-form-control nz-col [nzSpan]="23" nzErrorTip="Por favor seleciona el rol!">
+            <nz-select nzBorderless nzAutoFocus
+              id="roles"
+              formControlName="roles"
+              nzPlaceHolder="Seleccione el rol"
+              [ngModel]="selectedRol"   
+            >
+              <nz-option disabled nzValue="admin" nzLabel="Rol administrador"></nz-option>
+              <nz-option disabled nzValue="user" nzLabel="Rol usuario"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+    </div>
+
+    </div>
+    </form>
+</div>
+

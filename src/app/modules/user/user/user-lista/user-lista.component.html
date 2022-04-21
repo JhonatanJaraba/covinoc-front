@@ -1,0 +1,41 @@
+<div style="border: 1px solid #E9EEFA; border-radius: 8px; margin: 20px 0px;">
+    <div class="home-title-page"> 
+        <h1 class="title-home">Usuarios</h1>
+        <span class="title-secundary">Listado de todos los usuarios existentes en la plataforma.</span>
+    </div>
+        
+    <nz-table #basicTable 
+      [nzData]="listOfData" 
+      [nzPageSize]="7"
+      >
+    <thead >
+      <tr style="background: #F5F7FA;">
+        <th></th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Nombre usuario</th>
+        <th>Identificacion</th>
+        <th>Telefono</th>
+        <th>Correo electronico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data let i=index" >
+        <td style="display: flex; justify-content: space-around;" class="icons-list">
+          <i style="cursor: pointer;" nz-icon nzType="edit" [nzTheme]="'twotone'"
+          [nzTwotoneColor]="'	#ffcc00'" [routerLink]="['/main/user/user-update', data.id]"></i>
+            <i style="cursor: pointer;" nz-icon nzType="delete" [nzTheme]="'twotone'"
+            [nzTwotoneColor]="'#FF0000'" (click)="remove(i,data)"></i>
+        </td>
+        <td>{{ data.id }}</td>
+        <td>{{ data.nombre }}</td>
+        <td>{{ data.nombreUsuario }}</td>
+        <td>{{ data.cedula }}</td>
+        <td>{{ data.telefono }}</td>
+        <td>{{ data.email }}</td>
+      </tr> 
+    </tbody>
+  </nz-table>
+
+
+</div>

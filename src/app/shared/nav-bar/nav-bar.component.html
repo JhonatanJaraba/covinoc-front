@@ -1,0 +1,33 @@
+<nz-header>
+    <i
+      nz-col nzSpan="1"
+      class="trigger"
+      nz-icon
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      (click)="sidebar(isCollapsed = !isCollapsed)"
+    ></i><!-- (click)="isCollapsed = !isCollapsed" -->
+    <div nz-col nzSpan="12" style="display: flex; align-items: center; justify-content: flex-end;">
+      
+      
+      <div nz-col nzSpan="3" class="input-sesion" style="display: flex; align-items: center; ">
+        <nz-avatar nzText="PL" style="color:#FFFFFF; background-color:#00AE8D; margin-right: 10px;">
+        </nz-avatar>
+
+        <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+          <i nz-icon nzType="down"></i>
+        </a>
+
+
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item><i nz-icon nzType="form" nzTheme="outline" style="margin-right: 5px;"></i> Cambio contraseña</li>
+            <li nz-menu-item><i nz-icon nzType="setting" nzTheme="outline" style="margin-right: 5px;"></i> Configuración</li>
+            <li nz-menu-divider></li>
+            <li nz-menu-item (click)=closeSession()><i nz-icon nzType="api" nzTheme="outline" style="margin-right: 5px;"></i> Cerrar sesión</li>
+          </ul>
+        </nz-dropdown-menu>
+
+
+      </div>
+    </div> 
+  </nz-header>
